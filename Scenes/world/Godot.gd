@@ -6,23 +6,39 @@ const stop = 0
 const up = -1
 const down = 1
 
-const maxSpeed = 400
+const speed = 400
 
 var motion = Vector2(0,0)
 
 func _ready():
 	pass
+	
+func _update_motion_x(x):
+	motion.x = x
 
-func _process(delta):
-	motion = Vector2()	
-	if Input.is_action_pressed("ui_d"):
-		motion.x += 1
-	if Input.is_action_pressed("ui_a"):
-		motion.x -= 1
-	if Input.is_action_pressed("ui_s"):
-		motion.y += 1
-	if Input.is_action_pressed("ui_w"):
-		motion.y -= 1
+func _update_motion_y(y):
+	motion.y = y
+	
+func _move():
+	_update_motion_x(stop)
+	
+	_update_motion_y(stop)	
+	
+	if Input.is_action_pressed("ui_d") and not Input.is_action_pressed("ui_a"):
+		_update_motion_x(right)
 		
-	motion = motion.normalized() * maxSpeed
-	move_and_slide(motion)
+	if Input.is_action_pressed("ui_a") and not Input.is_action_pressed("ui_d"):
+		_update_motion_x(left)
+		
+	if Input.is_action_pressed("ui_s") and not Input.is_action_pressed("ui_w"):
+		_update_motion_y(down)
+		
+	if Input.is_action_pressed("ui_w") and not Input.is_action_pressed("ui_s"):
+		_update_motion_y(up)
+		
+	motion = motion.normalized() * speed
+	
+	motion = move_and_slide(motion)
+	
+func _physics_process(delta):
+	_move()
