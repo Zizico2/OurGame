@@ -18,7 +18,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
@@ -32,7 +32,7 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 16 )
@@ -82,7 +82,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Godot" index="2"]
 
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "idle"
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
@@ -140,7 +140,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateAreas LF/Gates" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="next level" type="Area2D" parent="GateAreas LF" index="1"]
 
@@ -162,7 +162,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateAreas LF/next level" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="GateAreas BR" type="Node2D" parent="." index="3"]
 
@@ -193,7 +193,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateAreas BR/Gates" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="next level" type="Area2D" parent="GateAreas BR" index="1"]
 
@@ -215,7 +215,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateAreas BR/next level" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="GateAreas T" type="Node2D" parent="." index="4"]
 
@@ -247,7 +247,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateAreas T/Gates" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="next level" type="Area2D" parent="GateAreas T" index="1"]
 
@@ -269,6 +269,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateAreas T/next level" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 

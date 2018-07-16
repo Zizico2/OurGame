@@ -1,24 +1,34 @@
 extends KinematicBody2D
 
+#Constants
 const left = -1
 const right = 1
 const up = -1
 const down = 1
-
 const speed = 400
 
+#Variables
 var motion = Vector2(0,0)
 
+#Initializes the scene
 func _ready():
 	pass
 
+#Updates the x axis of 'motion'
 func _update_motion_x(x):
 	motion.x += x
 
+#Updates the y axis of 'motion'
 func _update_motion_y(y):
 	motion.y += y
-	
-func _move():
+
+#Makes the body move according to the vector 'motion'	
+func _execute_movement():
+	motion = motion.normalized() * speed
+	motion = move_and_slide(motion)
+
+#Handles the movement instrunctions and makes changes to the vector 'motion' accordingly
+func _handle_movement_instructions():
 	motion = Vector2()
 	
 	if Input.is_action_pressed("ui_d"):
@@ -41,15 +51,13 @@ func _move():
 	
 	if motion == Vector2(0,0):
 		$AnimatedSprite.play("idle")
-			
-	motion = motion.normalized() * speed
 	
-	motion = move_and_slide(motion)
-	
-func _new_room():
-	pass
-	
+#Makes the body move
+func _move():
+	_handle_movement_instructions()
+	_execute_movement()	
+
+#Updates the physics of the body
 func _physics_process(delta):
-	
 	_move()
 	
