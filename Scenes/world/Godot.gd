@@ -24,6 +24,7 @@ func _move():
 	
 	_update_motion_y(stop)	
 	
+	
 	if Input.is_action_pressed("ui_d") and not Input.is_action_pressed("ui_a"):
 		_update_motion_x(right)
 		
