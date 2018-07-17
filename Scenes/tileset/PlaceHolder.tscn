@@ -1,73 +1,53 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/Tiles/Tiles.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Tiles/RockGround.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tiles/RockGround.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Tiles/Tiles.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 16, 16 )
 
-[node name="PlaceHolder" type="Node"]
+[node name="root" type="Node"]
 
-[node name="Next Level BR" type="Sprite" parent="." index="0"]
+[node name="Floor" type="Sprite" parent="." index="0"]
 
-position = Vector2( 224, 256 )
+position = Vector2( 96, 96 )
 texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 160, 192, 32, 32 )
-_sections_unfolded = [ "Offset", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Next Level T" type="Sprite" parent="." index="1"]
-
-position = Vector2( 288, 256 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 224, 192, 32, 32 )
-_sections_unfolded = [ "Offset", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Next Level LF" type="Sprite" parent="." index="2"]
-
-position = Vector2( 160, 256 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 96, 192, 32, 32 )
-_sections_unfolded = [ "Offset", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Floor" type="Sprite" parent="." index="3"]
-
-position = Vector2( 224, 128 )
-texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 _sections_unfolded = [ "Offset", "Region" ]
 
-[node name="Wall" type="Sprite" parent="." index="4"]
+[node name="Gate BR" type="Sprite" parent="." index="1"]
 
-position = Vector2( 224, 64 )
-texture = ExtResource( 1 )
+position = Vector2( 96, 160 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 160, 160, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Gate T" type="Sprite" parent="." index="2"]
+
+position = Vector2( 160, 160 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 224, 160, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="Wall" type="Sprite" parent="." index="3"]
+
+position = Vector2( 96, 32 )
+texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 32, 160, 32, 32 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Wall" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall" index="0"]
 
-position = Vector2( 16, 16 )
-scale = Vector2( 0.5, 0.5 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -77,34 +57,16 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D5" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D" index="0"]
 
-visible = false
+position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Gate BR" type="Sprite" parent="." index="5"]
+[node name="Gate LF" type="Sprite" parent="." index="4"]
 
-position = Vector2( 224, 192 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 160, 160, 32, 32 )
-_sections_unfolded = [ "Region" ]
-
-[node name="Gate T" type="Sprite" parent="." index="6"]
-
-position = Vector2( 288, 192 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 224, 160, 32, 32 )
-_sections_unfolded = [ "Offset", "Region" ]
-
-[node name="Gate LF" type="Sprite" parent="." index="7"]
-
-position = Vector2( 160, 192 )
-texture = ExtResource( 1 )
+position = Vector2( 32, 160 )
+texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 96, 160, 32, 32 )
