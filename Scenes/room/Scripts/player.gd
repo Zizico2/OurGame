@@ -13,6 +13,7 @@ var motion = Vector2(0,0)
 
 #Initializes the scene
 func _ready():
+	position = Vector2(512,608)
 	pass
 
 #Updates the x axis of 'motion'
@@ -29,7 +30,7 @@ func _execute_movement():
 	motion = move_and_slide(motion)
 	
 
-#Handles the movement instrunctions and makes changes to the vector 'motion' accordingly
+#Handles the movement instructions and makes changes to the vector 'motion' accordingly
 func _handle_movement_instructions():
 	motion = Vector2()
 	
