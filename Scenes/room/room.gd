@@ -1,11 +1,13 @@
 extends Node2D
+export var type = ""
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 
 func _ready():
-	position = Vector2(0,0)
+	if type == "LF":
+		$tile_map.set_cell(16,16,3)
 	pass
 
 #func _process(delta):

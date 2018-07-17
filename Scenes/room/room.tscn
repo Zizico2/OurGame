@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scenes/room/Scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Characters/frame0.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Characters/frame1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Characters/frame2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Characters/frame3.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Characters/frame4.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Characters/frame5.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/next_level/next_level.tscn" type="PackedScene" id=8]
-[ext_resource path="res://TileSets/placeholder.tres" type="TileSet" id=9]
+[ext_resource path="res://Scenes/room/room.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/room/Scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Characters/frame0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Characters/frame1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Characters/frame2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Characters/frame3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Characters/frame4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Characters/frame5.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/next_level/next_level.tscn" type="PackedScene" id=9]
+[ext_resource path="res://TileSets/placeholder.tres" type="TileSet" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -18,22 +19,25 @@ extents = Vector2( 16, 16 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 1.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [node name="root" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+type = "LF"
 
 [node name="player" type="KinematicBody2D" parent="." index="0"]
 
@@ -43,7 +47,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
@@ -58,21 +62,20 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 frames = SubResource( 2 )
 animation = "idle"
-_sections_unfolded = [ "Transform" ]
 
 [node name="next_level" type="Node2D" parent="." index="1"]
 
-[node name="next_level BR" parent="next_level" index="0" instance=ExtResource( 8 )]
+[node name="next_level BR" parent="next_level" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 256, -16 )
 type = "BR"
 
-[node name="next_level LF" parent="next_level" index="1" instance=ExtResource( 8 )]
+[node name="next_level LF" parent="next_level" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 768, -16 )
 type = "LF"
 
-[node name="next_level" parent="next_level" index="2" instance=ExtResource( 8 )]
+[node name="next_level" parent="next_level" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 512, -16 )
 type = "BR"
@@ -80,7 +83,7 @@ type = "BR"
 [node name="tile_map" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 10 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
