@@ -37,10 +37,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-type = "LF"
 
 [node name="player" type="KinematicBody2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 512, 608 )
 z_index = 1
 input_pickable = false
@@ -67,17 +67,17 @@ animation = "idle"
 
 [node name="next_level BR" parent="next_level" index="0" instance=ExtResource( 9 )]
 
-position = Vector2( 256, -16 )
+position = Vector2( 256, -48 )
 type = "BR"
 
 [node name="next_level LF" parent="next_level" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 768, -16 )
+position = Vector2( 768, -48 )
 type = "LF"
 
 [node name="next_level" parent="next_level" index="2" instance=ExtResource( 9 )]
 
-position = Vector2( 512, -16 )
+position = Vector2( 512, -48 )
 type = "BR"
 
 [node name="tile_map" type="TileMap" parent="." index="2"]
