@@ -13,7 +13,6 @@ var motion = Vector2(0,0)
 
 #Initializes the scene
 func _ready():
-	position = Vector2(512,608)
 	pass
 
 #Updates the x axis of 'motion'
