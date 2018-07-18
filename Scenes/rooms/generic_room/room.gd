@@ -8,9 +8,7 @@ var type = ""
 func _ready():
 	pass
 	
-func _on_next_level(next_type):
-	type = next_type
-	get_tree().reload_current_scene()
+
 
 func _process(delta):
 	print(type)
