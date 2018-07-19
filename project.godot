@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="OurGame"
-run/main_scene="res://Scenes/rooms/generic_room/generic_room.tscn"
+run/main_scene="res://Scenes/rooms/spawn_room/spawn_room.tscn"
 config/icon="res://icon.png"
 
 [display]

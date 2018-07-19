@@ -6,10 +6,14 @@ const left = -1
 const right = 1
 const up = -1
 const down = 1
-const speed = 400
+const speed = 300
+const baseHealth = 100
 
 #Variables
 var motion = Vector2(0,0)
+var level = 1
+var levelRatio = level * 5
+var HealthPoints = baseHealth * levelRatio
 
 #Initializes the scene
 func _ready():
@@ -62,3 +66,9 @@ func _move():
 #Updates the physics of the body
 func _physics_process(delta):
 	_move()
+	#print(HealthPoints)
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("enemy"):
+		HealthPoints -= body._get_damage()
+	print(HealthPoints)
