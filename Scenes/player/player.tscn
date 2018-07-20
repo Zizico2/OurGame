@@ -1,12 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/player/Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/frame0.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Characters/frame1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Characters/frame2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Characters/frame3.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Characters/frame4.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Characters/frame5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Characters/Stone_Emerald/sprite_0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Characters/Stone_Emerald/sprite_1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Characters/Stone_Emerald/sprite_2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Characters/Stone_Emerald/sprite_3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Characters/Stone_Emerald/sprite_4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Characters/Stone_Emerald/sprite_5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Characters/frame1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Characters/frame2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Characters/frame3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Characters/frame4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Characters/frame5.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,7 +27,17 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "golem_idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "golem_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk",
 "speed": 1.0

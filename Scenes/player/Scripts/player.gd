@@ -6,7 +6,7 @@ const left = -1
 const right = 1
 const up = -1
 const down = 1
-const speed = 300
+const speed = 50
 const baseHealth = 100
 
 #Variables
@@ -39,24 +39,24 @@ func _handle_movement_instructions():
 	
 	if Input.is_action_pressed("ui_d"):
 		_update_motion_x(right)
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("golem_walk")
 		$AnimatedSprite.set_flip_h(false)
 		
 	if Input.is_action_pressed("ui_a"):
 		_update_motion_x(left)
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("golem_walk")
 		$AnimatedSprite.set_flip_h(true)
 		
 	if Input.is_action_pressed("ui_s"):
 		_update_motion_y(down)
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("golem_walk")
 		
 	if Input.is_action_pressed("ui_w"):
 		_update_motion_y(up)
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("golem_walk")
 	
 	if motion == Vector2(0,0):
-		$AnimatedSprite.play("idle")
+		$AnimatedSprite.play("golem_idle")
 	
 #Makes the body move
 func _move():
