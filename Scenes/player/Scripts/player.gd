@@ -6,7 +6,7 @@ const left = -1
 const right = 1
 const up = -1
 const down = 1
-const speed = 50
+const speed = 400
 const baseHealth = 100
 
 #Variables

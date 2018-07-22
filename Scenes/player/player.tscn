@@ -35,7 +35,7 @@ animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "golem_walk",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
@@ -67,7 +67,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 frames = SubResource( 2 )
-animation = "idle"
+animation = "golem_idle"
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
